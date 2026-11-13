@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hisham Keyboard</title>
+<style>
+body {
+ background:#111;
+ color:white;
+ text-align:center;
+ font-family:Arial;
+ padding:15px;
+}
+h2 {color:#00e5ff;}
+textarea {
+ width:95%;
+ height:110px;
+ font-size:22px;
+ border-radius:12px;
+ padding:10px;
+}
+.keys {
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:8px;
+ margin-top:15px;
+}
+button {
+ padding:17px 5px;
+ border:0;
+ border-radius:10px;
+ background:#222;
+ color:white;
+ font-size:22px;
+}
+button:active {background:#00aaff;}
+</style>
+</head>
+<body>
+<h2>🔥 HISHAM AL-OMAR 🔥</h2>
+<textarea id="out" placeholder="اكتب هنا..."></textarea>
+<div class="keys" id="keys"></div>
+<script>
+let keys="ض ص ث ق ف غ ع ه خ ح ج د ش س ي ب ل ا ت ن م ك ط ئ ء ؤ ر لا ى ة و ز ظ 1 2 3 4 5 6 7 8 9 0".split(" ");
+let box=document.getElementById("keys");
+keys.forEach(k=>{
+ let b=document.createElement("button");
+ b.textContent=k;
+ b.onclick=()=>document.getElementById("out").value+=k;
+ box.appendChild(b);
+});
+</script>
+</body>
+</html>
